@@ -1318,3 +1318,39 @@ html[data-theme="light"] .steps-list li::before {
     background-color: var(--cream);
     color: var(--light-cream);
 }
+
+/* --- NOUVEAUX STYLES POUR L'UPLOAD CLOUDINARY --- */
+.upload-status {
+    display: block;
+    font-size: 0.85rem;
+    margin-top: 0.75rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+.upload-status.uploading {
+    color: #F39C12; /* Orange for in-progress */
+}
+.upload-status.success {
+    color: var(--success-color);
+}
+.upload-status.error {
+    color: var(--error-color);
+}
+.upload-status::before {
+    margin-right: 0.5rem;
+}
+.upload-status.uploading::before {
+    content: '⏳';
+    animation: spin 1s linear infinite;
+    display: inline-block;
+}
+.upload-status.success::before {
+    content: '✔';
+}
+.upload-status.error::before {
+    content: '✖';
+}
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
