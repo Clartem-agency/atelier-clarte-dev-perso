@@ -115,8 +115,8 @@ document.addEventListener('DOMContentLoaded', function () {
     function setupCloudinaryUploads() {
         // !!! IMPORTANT !!!
         // Remplacez ces valeurs par vos propres informations Cloudinary
-        const CLOUD_NAME = 'YOUR_CLOUD_NAME';
-        const UPLOAD_PRESET = 'YOUR_UPLOAD_PRESET';
+        const CLOUD_NAME = 'dbihs2rzm';
+        const UPLOAD_PRESET = 'atelier-clarte-dev-perso-upload';
         
         const fileInputs = document.querySelectorAll('input[type="file"][data-cloudinary-field]');
 
