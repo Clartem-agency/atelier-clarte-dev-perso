@@ -42,34 +42,41 @@ body {
     padding: 0 2rem;
 }
 
+/* --- ANCIENS STYLES (À SUPPRIMER OU REMPLACER) --- */
+/* 
 .site-header {
     padding: 3rem 0;
     text-align: center;
     margin-bottom: 2rem;
 }
-
-.logo {
-    max-width: 280px;
-    height: auto;
-    transition: filter 0.3s;
-}
+*/
 
 .page-section {
     margin-bottom: 5rem;
 }
 
-/* --- PAGE DE GARDE & INTRODUCTION --- */
-.cover-page {
+/* --- NOUVELLE SECTION HÉROS AMÉLIORÉE --- */
+.hero-section {
     text-align: center;
-    padding: 5rem 0;
+    padding: 4rem 0 5rem 0;
     border-bottom: 1px solid var(--border-color);
+    background: radial-gradient(ellipse at top, #2a3a6d, var(--dark-blue));
+}
+
+.hero-section .logo {
+    max-width: 220px; /* Taille ajustée pour une meilleure intégration */
+    height: auto;
+    transition: filter 0.3s;
+    margin-bottom: 2rem; /* Espace entre le logo et le titre */
 }
 
 .main-title {
-    font-size: 3rem;
+    font-size: 3.2rem; /* Légèrement plus grand pour plus d'impact */
     font-weight: 700;
     letter-spacing: -1.5px;
-    margin-bottom: 1rem;
+    line-height: 1.2;
+    max-width: 750px;
+    margin: 0 auto 1rem auto;
 }
 
 .subtitle {
@@ -77,16 +84,26 @@ body {
     font-weight: 300;
     color: rgba(245, 239, 225, 0.85);
     max-width: 600px;
-    margin: 0 auto 3rem auto;
+    margin: 0 auto 3.5rem auto; /* Marge inférieure augmentée */
 }
 
 .client-info {
     display: flex;
     justify-content: center;
     gap: 2rem;
-    margin-top: 4rem;
+    margin-top: 0; /* La marge est maintenant sur le sous-titre */
 }
 
+/* --- ANCIENS STYLES (À SUPPRIMER OU REMPLACER) --- */
+/*
+.cover-page {
+    text-align: center;
+    padding: 5rem 0;
+    border-bottom: 1px solid var(--border-color);
+}
+*/
+
+/* --- INTRODUCTION --- */
 .info-item {
     display: flex;
     flex-direction: column;
@@ -1218,7 +1235,7 @@ html[data-theme="light"] {
 
 html[data-theme="light"] .theme-switcher .sun-icon { display: block; }
 html[data-theme="light"] .theme-switcher .moon-icon { display: none; }
-html[data-theme="light"] .site-header .logo {
+html[data-theme="light"] .hero-section .logo {
     filter: invert(10%) sepia(20%) saturate(5000%) hue-rotate(220deg);
 }
 html[data-theme="light"] .subtitle,
