@@ -728,6 +728,14 @@ document.addEventListener('DOMContentLoaded', function () {
         setupPersonalization();
         setupCloudinaryUploads(); // Ajout de l'initialisation Cloudinary
         
+        // NOUVEAU : Initialisation de la Lightbox
+        const lightbox = GLightbox({
+            selector: '.glightbox',
+            touchNavigation: true,
+            loop: true,
+            autoplayVideos: true
+        });
+        
         allFormElements.forEach(input => {
             // On ne veut pas que la sélection de fichier déclenche la sauvegarde,
             // seulement le téléversement réussi (géré dans setupCloudinaryUploads)

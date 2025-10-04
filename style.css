@@ -576,6 +576,8 @@ body {
     border-radius: 8px;
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
 }
 
 .inspiration-item:hover {
@@ -588,7 +590,6 @@ body {
     width: 100%;
     height: 180px;
     object-fit: cover;
-    border-bottom: 1px solid var(--border-color);
 }
 
 .inspiration-item figcaption {
@@ -596,6 +597,7 @@ body {
     font-size: 0.85rem;
     line-height: 1.6;
     color: rgba(245, 239, 225, 0.8);
+    flex-grow: 1; /* Permet à la légende de prendre l'espace restant */
 }
 
 .inspiration-item figcaption strong {
@@ -604,6 +606,46 @@ body {
     font-weight: 600;
     margin-bottom: 0.25rem;
 }
+
+/* --- NOUVEAUX STYLES POUR LA LIGHTBOX ET LA GALERIE --- */
+.inspiration-item .image-container {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.inspiration-item .image-container img {
+    transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.inspiration-item .image-container:hover img {
+    transform: scale(1.05);
+}
+
+.gallery-indicator {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(25, 34, 79, 0.8);
+    color: var(--cream);
+    text-align: center;
+    padding: 0.6rem;
+    font-size: 0.8rem;
+    font-weight: 500;
+    opacity: 0;
+    transform: translateY(100%);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    pointer-events: none; /* Pour s'assurer que le clic passe au lien <a> */
+}
+
+.inspiration-item .image-container:hover .gallery-indicator {
+    opacity: 1;
+    transform: translateY(0);
+}
+/* --- FIN DES NOUVEAUX STYLES --- */
+
 
 .inspiration-single-image {
     display: block;

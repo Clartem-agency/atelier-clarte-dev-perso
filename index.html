@@ -12,6 +12,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
 
+    <!-- NOUVEAU : Feuille de Style pour la Lightbox (GLightbox) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
+    <!-- FIN DU NOUVEAU STYLE -->
+
     <!-- Notre Feuille de Style -->
     <link rel="stylesheet" href="style.css">
 </head>
@@ -410,19 +414,45 @@
                         <div class="inspiration-container">
                             <h4 class="inspiration-title">Quelques ambiances pour vous inspirer</h4>
                             <div class="inspiration-gallery">
+                                <!-- CARTE 1 MODIFIÉE POUR LA GALERIE -->
                                 <figure class="inspiration-item">
-                                    <img src="https://i.ibb.co/yQdSB3g/hero-example-2.jpg"
-                                        alt="Exemple de section héros avec un portrait authentique d'un coach">
+                                    <div class="image-container">
+                                        <a href="https://i.ibb.co/yQdSB3g/hero-example-2.jpg" class="glightbox" data-gallery="gallery-humain" data-title="Un portrait chaleureux et professionnel.">
+                                            <img src="https://i.ibb.co/yQdSB3g/hero-example-2.jpg" alt="Exemple de section héros avec un portrait authentique d'un coach">
+                                            <div class="gallery-indicator">Voir la galerie (3 images)</div>
+                                        </a>
+                                        <!-- NOUVELLES IMAGES CACHÉES POUR LA GALERIE (remplacez les liens) -->
+                                        <a href="https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=1961&auto=format&fit=crop" class="glightbox" data-gallery="gallery-humain" data-title="Un autre exemple de portrait." style="display: none;"></a>
+                                        <a href="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=1888&auto=format&fit=crop" class="glightbox" data-gallery="gallery-humain" data-title="Un troisième portrait pour inspirer." style="display: none;"></a>
+                                    </div>
                                     <figcaption><strong>Style "Humain / Authentique" :</strong> Un portrait de vous, chaleureux et professionnel, pour créer une connexion immédiate de personne à personne.</figcaption>
                                 </figure>
+
+                                <!-- CARTE 2 MODIFIÉE POUR LA GALERIE -->
                                 <figure class="inspiration-item">
-                                    <img src="https://i.ibb.co/fH7C07x/hero-example-1.jpg"
-                                        alt="Exemple de section héros avec une image inspirante de nature">
+                                    <div class="image-container">
+                                        <a href="https://i.ibb.co/fH7C07x/hero-example-1.jpg" class="glightbox" data-gallery="gallery-nature" data-title="Un paysage évoquant le calme et la croissance.">
+                                            <img src="https://i.ibb.co/fH7C07x/hero-example-1.jpg" alt="Exemple de section héros avec une image inspirante de nature">
+                                            <div class="gallery-indicator">Voir la galerie (3 images)</div>
+                                        </a>
+                                        <!-- NOUVELLES IMAGES CACHÉES POUR LA GALERIE (remplacez les liens) -->
+                                        <a href="https://images.unsplash.com/photo-1473448912268-2022ce9509d8?q=80&w=1925&auto=format&fit=crop" class="glightbox" data-gallery="gallery-nature" data-title="Un chemin qui s'ouvre, symbolisant le parcours." style="display: none;"></a>
+                                        <a href="https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?q=80&w=1887&auto=format&fit=crop" class="glightbox" data-gallery="gallery-nature" data-title="Un lac paisible pour une ambiance sereine." style="display: none;"></a>
+                                    </div>
                                     <figcaption><strong>Style "Inspirant / Naturel" :</strong> Une image évoquant le calme, la croissance ou la nature, pour une ambiance apaisante et pleine d'espoir.</figcaption>
                                 </figure>
+
+                                <!-- CARTE 3 MODIFIÉE POUR LA GALERIE -->
                                 <figure class="inspiration-item">
-                                    <img src="https://i.ibb.co/V95wG3J/hero-example-3.jpg"
-                                        alt="Exemple de section héros minimaliste avec un fond de couleur et une grande typographie">
+                                    <div class="image-container">
+                                        <a href="https://i.ibb.co/V95wG3J/hero-example-3.jpg" class="glightbox" data-gallery="gallery-minimaliste" data-title="Un design épuré qui met en avant le message.">
+                                            <img src="https://i.ibb.co/V95wG3J/hero-example-3.jpg" alt="Exemple de section héros minimaliste avec un fond de couleur et une grande typographie">
+                                            <div class="gallery-indicator">Voir la galerie (3 images)</div>
+                                        </a>
+                                        <!-- NOUVELLES IMAGES CACHÉES POUR LA GALERIE (remplacez les liens) -->
+                                        <a href="https://i.ibb.co/bXj0Z3D/logo-horizontal-cream.png" class="glightbox" data-gallery="gallery-minimaliste" data-title="Exemple avec un logo sur fond coloré." style="display: none;"></a>
+                                        <a href="https://images.unsplash.com/photo-1557682250-33bd709cbe85?q=80&w=2070&auto=format&fit=crop" class="glightbox" data-gallery="gallery-minimaliste" data-title="Un dégradé de couleurs douces." style="display: none;"></a>
+                                    </div>
                                     <figcaption><strong>Style "Minimaliste / Épuré" :</strong> Pas d'image, toute la
                                         puissance est dans le message et les couleurs douces pour un impact de clarté et de concentration.</figcaption>
                                 </figure>
@@ -538,8 +568,8 @@
                 </div>
             </section>
 
-
-
+            <!-- ... (LE RESTE DU FICHIER HTML RESTE INCHANGÉ) ... -->
+            
             <!-- ================================================================= -->
             <!-- SECTION 2 : À PROPOS - LE VISAGE DERRIÈRE L'ACCOMPAGNEMENT (VERSION AMÉLIORÉE) -->
             <!-- ================================================================= -->
@@ -3254,6 +3284,9 @@
 
 </form>
 
+    <!-- NOUVEAU : Script pour la Lightbox (GLightbox) -->
+    <script src="https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js"></script>
+    <!-- FIN DU NOUVEAU SCRIPT -->
 
     <script src="script.js"></script>
 </body>
