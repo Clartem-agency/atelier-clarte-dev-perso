@@ -33,6 +33,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // --- CONFIGURATION CENTRALE DES SECTIONS ---
     const SECTIONS_CONFIG = [
+        { id: 'section-0-foundations', key: 'foundations', name: 'Fondations : Votre Nom', keyFields: ['domain-choice-final'], isOptional: false, isFilled: () => !!document.getElementById('domain-choice-final')?.value.trim() },
         { id: 'section-1-hero', key: 'hero', name: 'Héros : Votre Promesse', keyFields: ['hero-title-1', 'hero-cta-primary'], isOptional: false, isFilled: () => !!document.getElementById('hero-title-1')?.value.trim() },
         { id: 'section-2-about', key: 'about', name: 'À Propos : Votre Histoire', keyFields: ['about-title-final', 'about-story-final'], isOptional: false, isFilled: () => !!document.getElementById('about-title-final')?.value.trim() },
         { id: 'section-3-services', key: 'services', name: 'Accompagnements : Vos Offres', keyFields: ['services-title-final', 'service-1-name'], isOptional: false, isFilled: () => !!document.getElementById('service-1-name')?.value.trim() },
@@ -386,6 +387,9 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function initializeSummaries() {
+        // Section Fondations
+        setupSync('domain-choice-final', 'summary-domain-choice');
+
         // Section 1: Héros
         setupSync('hero-title-1', 'summary-hero-title-1');
         setupSync('hero-subtitle-1', 'summary-hero-subtitle-1');
@@ -769,6 +773,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const getFileValue = (id) => document.getElementById(id)?.value.trim() || '';
         const getRadioValue = (name) => document.querySelector(`input[name="${name}"]:checked`)?.value || '';
 
+        data.foundations = { domain: getValue('domain-choice-final') };
         data.client = { name: getValue('client-name-input'), date: getValue('client-date-input') };
         data.hero = { title1: getValue('hero-title-1'), subtitle1: getValue('hero-subtitle-1'), cta1: getValue('hero-cta-primary'), visualType: getRadioValue('hero-visual-choice'), imageUrl: getFileValue('hero-image-upload'), color: getValue('hero-color-choice') };
         data.about = { title: getValue('about-title-final'), story: getValue('about-story-final'), imageUrl: getFileValue('about-image-upload') };
@@ -815,6 +820,7 @@ document.addEventListener('DOMContentLoaded', function () {
             return `<div class="report-field"><strong>${label}</strong><div class="value">${displayValue}</div></div>`;
         };
         
+        reportHTML += `<div class="report-section"><h2>Fondations : Nom de Domaine</h2>${generateField('Nom de Domaine Choisi', data.foundations.domain)}</div>`;
         reportHTML += `<div class="report-section"><h2>Section 1 : Héros</h2>${generateField('Titre', data.hero.title1)}${generateField('Sous-titre', data.hero.subtitle1)}${generateField('Bouton', data.hero.cta1)}</div>`;
         reportHTML += `<div class="report-section"><h2>Section 2 : À Propos</h2>${generateField('Titre', data.about.title)}${generateField('Récit', data.about.story)}${generateField('Image (URL)', data.about.imageUrl)}</div>`;
         let servicesHTML = data.services.offers.map((o, i) => `<div class="report-subsection"><h3>Accompagnement ${i+1}</h3>${generateField('Nom', o.name)}${generateField('Description', o.description)}${generateField('Tarif/Durée', o.price)}</div>`).join('');
