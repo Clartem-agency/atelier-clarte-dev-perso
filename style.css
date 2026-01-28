@@ -1485,3 +1485,49 @@ html[data-theme="light"] .steps-list li::before {
     from { transform: rotate(0deg); }
     to { transform: rotate(360deg); }
 }
+
+
+
+
+
+/* ======================================================= */
+/*      NOUVEAU STYLE : BOÎTES JURIDIQUES & SÉCURITÉ       */
+/* ======================================================= */
+.tip-box.legal {
+    background-color: rgba(243, 156, 18, 0.15); /* Fond Ambre léger */
+    border: 1px solid rgba(243, 156, 18, 0.3);
+    border-left: 6px solid #F39C12; /* Bordure gauche épaisse et visible */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Ombre pour détacher du fond */
+    position: relative;
+    padding-left: 2rem;
+}
+
+.tip-box.legal h6 {
+    color: #F39C12; /* Titre en Ambre/Or */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.9rem;
+    border-bottom: 1px solid rgba(243, 156, 18, 0.2);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.tip-box.legal .icon {
+    font-size: 1.4rem;
+    margin-right: 0.5rem;
+    vertical-align: middle;
+}
+
+.tip-box.legal strong {
+    color: #F39C12;
+}
+
+/* Ajustement pour le Mode Clair (Light Mode) pour rester lisible */
+html[data-theme="light"] .tip-box.legal {
+    background-color: #FFF8E1; /* Fond crème jaune */
+    border-color: #FFC107;
+}
+html[data-theme="light"] .tip-box.legal h6,
+html[data-theme="light"] .tip-box.legal strong {
+    color: #D35400; /* Orange foncé pour lisibilité sur fond clair */
+}
