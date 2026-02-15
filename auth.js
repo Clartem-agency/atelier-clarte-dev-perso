@@ -5,7 +5,7 @@
 (function () {
 
     // ⚠️ MODIFIER CETTE URL pour chaque site
-    var API_URL = 'https://NOM-DU-SITE.netlify.app/.netlify/identity';
+var API_URL = 'https://atelier-clarte-dev-perso.netlify.app/.netlify/identity';
 
     // ⚠️ CRITIQUE : Capturer le hash AVANT tout init du widget
     // car netlifyIdentity.init() consomme et supprime le token du hash !
