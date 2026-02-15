@@ -6,15 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Atelier Dev Perso</title>
 
-    <!-- Google Fonts: Poppins -->
+    <!-- Google Fonts: DM Serif Display + DM Sans -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300;1,9..40,400&display=swap"
         rel="stylesheet">
 
     <!-- NOUVEAU : Feuille de Style pour la Lightbox (GLightbox) -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
     <!-- FIN DU NOUVEAU STYLE -->
+
+    <!-- Netlify Identity Widget pour l'authentification -->
+    <script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 
     <!-- Notre Feuille de Style -->
     <link rel="stylesheet" href="style.css">
@@ -22,6 +25,37 @@
 
 <body>
 
+    <!-- ===== ÉCRAN DE CONNEXION ===== -->
+    <div id="login-gate" class="login-gate">
+        <div class="login-container">
+            <div class="login-glow"></div>
+            <img src="images/logo-clartem-blanc.png" alt="Logo Clartem" class="login-logo">
+            <div class="login-accent"></div>
+            <h2 class="login-title">Votre <em>Atelier de Clarté</em></h2>
+            <p class="login-subtitle">Connectez-vous pour accéder à votre espace personnel et commencer à donner vie à votre site.</p>
+            
+            <!-- Formulaire de connexion intégré -->
+            <div id="login-form-wrapper">
+                <div class="login-form">
+                    <input type="email" id="login-email" class="login-input" placeholder="Votre adresse email" autocomplete="email">
+                    <input type="password" id="login-password" class="login-input" placeholder="Votre mot de passe" autocomplete="current-password">
+                    <p id="login-error" class="login-error" style="display: none;"></p>
+                    <button id="login-btn" class="login-button">
+                        <span class="login-btn-icon">✦</span>
+                        <span id="login-btn-text">Se connecter</span>
+                    </button>
+                </div>
+            </div>
+
+            <p class="login-footer">Un espace protégé, rien que pour vous.</p>
+        </div>
+    </div>
+    <!-- ===== FIN ÉCRAN DE CONNEXION ===== -->
+
+    <!-- Bouton de déconnexion (visible uniquement quand connecté) -->
+    <button id="logout-btn" class="logout-button" style="display: none;" aria-label="Se déconnecter">
+        <span>⎋</span> Déconnexion
+    </button>
 
     <!-- NOUVEAU BOUTON POUR LE THÈME -->
     <button id="theme-switcher" class="theme-switcher" aria-label="Changer le thème">
@@ -51,9 +85,10 @@
                     <div class="hero-content">
                         <img src="images/logo-clartem-blanc.png"
                             alt="Logo Clartem - Création de sites web pour coachs et thérapeutes" class="logo">
-                        <h1 class="main-title">Bienvenue dans Votre Atelier de Clarté</h1>
-                        <p class="subtitle">Le parcours guidé pour créer votre espace digital, un site qui inspire la
-                            confiance et révèle votre expertise.</p>
+                        <div class="logo-accent"></div>
+                        <h1 class="main-title">Bienvenue dans Votre<br><em>Atelier de Clarté</em></h1>
+                        <p class="subtitle">Le parcours guidé pour donner vie à votre espace digital — un site qui inspire la
+                            confiance et révèle votre expertise à ceux qui ont besoin de vous.</p>
 
                         <div class="client-info">
                             <div class="info-item">
@@ -105,23 +140,23 @@
                             transformation. Si votre métier est d'aider les autres à grandir, à se révéler ou à
                             surmonter des défis, nous parlons le même langage. Il est fait pour vous si vous êtes :</p>
                         <div class="audience-grid">
-                            <div class="audience-category">
+                            <div class="audience-category" data-num="01">
                                 <h4>Coaching de vie</h4>
                                 <p>Coachs de vie (life coach), en confiance en soi, en PNL, en gestion des émotions.</p>
                             </div>
-                            <div class="audience-category">
+                            <div class="audience-category" data-num="02">
                                 <h4>Coaching relationnel</h4>
                                 <p>Coachs en relations amoureuses, familiaux, parentaux, conseillers conjugaux.</p>
                             </div>
-                            <div class="audience-category">
+                            <div class="audience-category" data-num="03">
                                 <h4>Coaching bien-être</h4>
                                 <p>Coachs en nutrition, en bien-être, en gestion du stress, en image de soi.</p>
                             </div>
-                            <div class="audience-category">
+                            <div class="audience-category" data-num="04">
                                 <h4>Coaching professionnel</h4>
                                 <p>Coachs carrière, pour entrepreneurs, en prise de parole en public, en leadership.</p>
                             </div>
-                            <div class="audience-category">
+                            <div class="audience-category" data-num="05">
                                 <h4>Thérapeutes & Praticiens</h4>
                                 <p>Hypnothérapeutes, Sophrologues, Praticiens en thérapies brèves, Art-thérapeutes.</p>
                             </div>
@@ -220,7 +255,7 @@
 
 
                     <div class="cta-container">
-                        <p class="ready-prompt">Prêt(e) à commencer ?</p>
+                        <p class="ready-prompt">Prêt(e) à poser les premières pierres ?</p>
                         <a href="#section-0-foundations" class="cta-button">Commencer l'Atelier de Clarté</a>
 
                         <div class="reset-container">
@@ -4174,7 +4209,7 @@
                                         <h5>Étape 1 : Votre Envoi</h5>
                                         <p>Relisez une dernière fois ce guide. Quand vous êtes prêt(e), enregistrez-le
                                             en
-                                            PDF et envoyez-le moi par email à <strong>[contact@clartem.com]</strong>.
+                                            PDF et envoyez-le moi par email à <strong>[<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="f1929e9f85909285b1929d908385949cdf929e9c">[email&#160;protected]</a>]</strong>.
                                         </p>
                                     </li>
                                     <li>
@@ -4238,10 +4273,14 @@
     </form>
 
     <!-- NOUVEAU : Script pour la Lightbox (GLightbox) -->
-    <script src="https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js"></script>
-    <!-- FIN DU NOUVEAU SCRIPT -->
+    <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
 
+    <!-- Script d'authentification (DOIT être chargé AVANT script.js) -->
+    <script src="auth.js"></script>
+
+    <!-- Script principal du site -->
     <script src="script.js"></script>
+
 </body>
 
 </html>
